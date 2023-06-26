@@ -80,6 +80,22 @@ if(!isset($admin_id)){
                 <div class="card">
                     <div>
                     <?php
+                        $select_messages = $conn->prepare("SELECT * FROM `sanpham`");
+                        $select_messages->execute();
+                        $numbers_of_messages = $select_messages->rowCount();
+                    ?>
+                        <div class="numbers"><?= $numbers_of_messages; ?></div>
+                        <div class="cardName">Sản phẩm</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="folder-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                    <?php
                         $select_messages = $conn->prepare("SELECT * FROM `messages`");
                         $select_messages->execute();
                         $numbers_of_messages = $select_messages->rowCount();
@@ -92,6 +108,8 @@ if(!isset($admin_id)){
                         <ion-icon name="chatbubbles-outline"></ion-icon>
                     </div>
                 </div>
+
+
 
                 
             </div>
