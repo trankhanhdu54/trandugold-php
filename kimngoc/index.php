@@ -10,7 +10,6 @@ if(isset($_POST['submit'])){
    $name = filter_var($name, FILTER_SANITIZE_STRING);
    $pass = sha1($_POST['pass']);
    $pass = filter_var($pass, FILTER_SANITIZE_STRING);
-
    $select_admin = $conn->prepare("SELECT * FROM `admin` WHERE name = ? AND password = ?");
    $select_admin->execute([$name, $pass]);
    
@@ -21,9 +20,7 @@ if(isset($_POST['submit'])){
    }else{
       $message[] = 'Tên đăng nhập hoặc mật khẩu không chính xác!';
    }
-
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -31,9 +28,10 @@ if(isset($_POST['submit'])){
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Đăng Nhập ADMIN</title>
-   <link rel="icon" href="../images/logo.png">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login TranDuGold</title>
+    <link rel="icon" href="../img/logo-gold.png">
    
 
    <!-- font awesome cdn link  -->
@@ -41,7 +39,8 @@ if(isset($_POST['submit'])){
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="../css/admin_login.css">
-
+   <link rel="stylesheet" href="../css/login.css">
+   <link rel="stylesheet" href="../js/login.js">
 </head>
 <body>
 
@@ -58,11 +57,11 @@ if(isset($message)){
 }
 ?>
 
-<!-- admin login form section starts  -->
-<!-- <h2>test</h2> -->
-<!-- <div class="container" id="container">
-	<div class="form-container sign-up-container">
-		<form action="" method="POST">
+
+<h2>Login Form</h2>
+<div class="container" id="container">
+	<div  class="form-container sign-up-container">
+		<form action="#">
 			<h1>Create Account</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -70,20 +69,25 @@ if(isset($message)){
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your email for registration</span>
-			<input type="text" name="name" placeholder="Nhập user admin" oninput="this.value = this.value.replace(/\s/g, '')" />
-			<input type="password" name="pass" placeholder="Nhập mật khẩu"oninput="this.value = this.value.replace(/\s/g, '')" />
+			<input type="text" placeholder="Name1" />
+			<input type="email" placeholder="Email1" />
+			<input type="password" placeholder="Password" />
 			<button>Sign Up</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="" method="POST">
-			<h1>ADMIN</h1>
-			
-			<span></span>
-			<input maxlength="20" type="text" name="name" placeholder="Nhập user admin" oninput="this.value = this.value.replace(/\s/g, '')" />
-			<input maxlength="20" type="password" name="pass" placeholder="Nhập mật khẩu"oninput="this.value = this.value.replace(/\s/g, '')" />
-			
-			<button type="submit" name="submit" class="btn">Đăng Nhập</button>
+		<form action="" class="login__form" method="POST">
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="text" name="name" placeholder="User" />
+			<input type="password" name="pass" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button  name="submit" value="Đăng nhập ngay">Sign In</button>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -94,72 +98,13 @@ if(isset($message)){
 				<button class="ghost" id="signIn">Sign In</button>
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Chào bạn!</h1>
-				<p>Nhập thông tin cá nhân của bạn và bắt đầu truy cập vào trang quản lí!</p>
-				
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
 			</div>
 		</div>
 	</div>
-</div> -->
-
-<body class="align">
-
-  <div class="login">
-
-    <header class="login__header">
-      <h2><svg class="icon">
-          <use xlink:href="#icon-lock" />
-        </svg>Đăng Nhập ADMIN</h2>
-    </header>
-
-    <form action="" class="login__form" method="POST">
-
-      <div>
-        <label for="text">Email</label>
-        <input type="text" name="name" placeholder="Nhập user admin" oninput="this.value = this.value.replace(/\s/g, '')">
-      </div>
-
-      <div>
-        <label for="password">Mật Khẩu</label>
-        <input type="password" name="pass" placeholder="Nhập mật khẩu"oninput="this.value = this.value.replace(/\s/g, '')">
-      </div>
-
-	  <div>
-        <input class="button" type="submit" name="submit" value="Đăng nhập ngay">
-       
-      </div>
-
-    </form>
-
-  </div>
-
-  <svg xmlns="http://www.w3.org/2000/svg" class="icons">
-
-    <symbol id="icon-lock" viewBox="0 0 448 512">
-      <path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z" />
-    </symbol>
-
-  </svg>
-
-</body>
-
-
-
-
-
-
-
-
-
-<!-- admin login form section ends -->
-
-
-
-
-
-
-
-
+</div>
 
 <script src="assets/js/admin_login.js"></script>
 
