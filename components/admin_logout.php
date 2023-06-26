@@ -6,6 +6,5 @@ session_start();
 session_unset();
 session_destroy();
 
-header('location:../haha/index.php');
-
+header('location:../kimngoc/dangnhap');
 ?>
