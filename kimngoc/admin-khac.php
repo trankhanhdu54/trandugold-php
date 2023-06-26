@@ -82,24 +82,24 @@ if(!isset($admin_id)){
 
    <div class="box">
       <?php
-         $select_messages = $conn->prepare("SELECT * FROM `tieude`");
+         $select_messages = $conn->prepare("SELECT * FROM `chamngon`");
          $select_messages->execute();
          $numbers_of_messages = $select_messages->rowCount();
       ?>
       <h3><?= $numbers_of_messages; ?></h3>
       <p>Châm ngôn</p>
-      <a href="mid" class="btn">Xem châm ngôn</a>
+      <a href="chamngon" class="btn">Xem châm ngôn</a>
    </div>
 
    <div class="box">
       <?php
-         $select_messages = $conn->prepare("SELECT * FROM `tieude`");
+         $select_messages = $conn->prepare("SELECT * FROM `sanpham`");
          $select_messages->execute();
          $numbers_of_messages = $select_messages->rowCount();
       ?>
       <h3><?= $numbers_of_messages; ?></h3>
       <p>sản phẩm</p>
-      <a href="mid" class="btn">Xem sản phẩm</a>
+      <a href="sanpham" class="btn">Xem sản phẩm</a>
    </div>
 </div>
 
