@@ -1,0 +1,32 @@
+RewriteEngine On
+Options All -Indexes
+<Files .htaccess>
+Order Allow,Deny
+Deny from all
+</Files>
+
+ErrorDocument 404 /kimngoc/error
+
+RewriteRule ^error$ kimngoc/404.php [L]
+
+RewriteRule ^admin$ admin.php [L]
+RewriteRule ^chamngon$ admin-chamngon.php [L]
+RewriteRule ^congviec$ admin-congviec.php [L]
+RewriteRule ^dongthoigian$ admin-dongthoigian.php [L]
+RewriteRule ^theme$ admin-khac.php [L]
+RewriteRule ^profile$ admin-profile.php [L]
+RewriteRule ^sanpham$ admin-sanpham.php [L]
+RewriteRule ^slider$ admin-slider.php [L]
+RewriteRule ^tinnhan$ admin-tinnhan.php [L]
+RewriteRule ^mid$ admin-mid.php [L]
+RewriteRule ^update-chamngon$ admin-update-chamngon.php [L]
+RewriteRule ^update-congviec$ admin-update-congviec.php [L]
+RewriteRule ^update-dongthoigian$ admin-update-dongthoigian.php [L]
+RewriteRule ^update-mid$ admin-update-mid.php [L]
+RewriteRule ^admin-update-sanpham$ admin-update-sanpham.php [L]
+RewriteRule ^update-slider$ admin-update-slider.php [L]
+RewriteRule ^dangnhap$ index.php [L]
+
+
+
+
