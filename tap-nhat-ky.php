@@ -16,7 +16,7 @@
     <meta property="og:site_name" content="Trần Khánh Dư">
     <meta property="og:description" content="Tôi là một nhà phát triển website và nhà thiết kế trải nghiệm người dùng (Web Developer &amp; UX Designer). Với tôi lập trình là khoa học, thiết kế là nghệ thuật và viết lách là để nuôi dưỡng tâm hồn.">
     <meta name="robots" content="index,follow">
-    <link type="image/png" rel="icon" href="../img/logo-gold.png">
+    <link type="image/png" rel="icon" href="img/logo-gold.png">
     <link rel="canonical" href="tap-nhat-ky">
     
     <link type="text/css" rel="stylesheet" href="assets/css/azemis/reset/v.1.0.0.min.css">
@@ -199,7 +199,7 @@
 
             <li class="column display_flex items_center content_center text_center padding_0 border_bottom_2 
             border_white ">
-                <a href="dich-vu" class="display_block padding_y_1">
+                <a href="gioi-thieu" class="display_block padding_y_1">
 
 
                     <div
