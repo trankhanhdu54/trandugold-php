@@ -14,7 +14,7 @@
     <meta property="og:site_name" content="Trần Khánh Dư">
     <meta property="og:description" content="Gold là một cặp nhân cách trong một tâm hồn. Một tâm hồn cho khoa học, một tâm hồn cho nghệ thuật.">
     <meta name="robots" content="index,follow">
-    <link type="image/png" rel="icon" href="../img/logo-gold.png">
+    <link type="image/png" rel="icon" href="img/logo-gold.png">
     <link rel="canonical" href="phat-trien-web-ung-dung">
     
     <link type="text/css" rel="stylesheet" href="assets/css/gold/reset/v.1.0.0.min.css">
