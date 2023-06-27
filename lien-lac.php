@@ -1,30 +1,3 @@
-
-<?php
-
-include 'components/connect.php';
-
-
-
-if(isset($_POST['themmess'])){
-
-   
-   $name = $_POST['name'];
-   $name = filter_var($name, FILTER_SANITIZE_STRING);
-   $email = $_POST['email'];
-   $email = filter_var($email, FILTER_SANITIZE_STRING);
-   $message = $_POST['message'];
-   $message = filter_var($message, FILTER_SANITIZE_STRING);
-
-   $update_messages = $conn->prepare("INSERT INTO `messages` (name, email, message) VALUES(?,?,?)");
-   $update_messages->execute([$name,$email, $message]);
-
-//    $message[] = 'Gửi thành công!';
-   
-  
-   header("location:lien-lac");
-}
-?>
-
 <!doctype html>
 <html lang="vi">
 <head>
@@ -57,13 +30,16 @@ if(isset($_POST['themmess'])){
     <script src="assets/javascripts/config/fix-vh/v.1.0.0.min.js"></script>
 
     <!-- contact -->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- contact -->
+
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
+    
 
     
     <style>
@@ -339,28 +315,53 @@ if(isset($_POST['themmess'])){
 </footer>
 
 </body>
+<?php
+include 'components/connect.php';
+if(isset($_POST['themmess'])){
+   
+   $name = $_POST['name'];
+   $name = filter_var($name, FILTER_SANITIZE_STRING);
+   $email = $_POST['email'];
+   $email = filter_var($email, FILTER_SANITIZE_STRING);
+   $message = $_POST['message'];
+   $message = filter_var($message, FILTER_SANITIZE_STRING);
+
+   $update_messages = $conn->prepare("SELECT * FROM `messages` WHERE email = ? OR name = ?");
+   $update_messages->execute([$email,$name]);
+
+   if($update_messages->rowCount() > 0){
+        echo "<script>
+    Swal.fire({
+     icon: 'error',
+     title: 'Error...',
+     text: 'Gửi hoài không được đâu ạ :)))',
+   })
+  </script>";
+   }else{
+
+   $update_messages = $conn->prepare("INSERT INTO `messages` (name, email, message) VALUES(?,?,?)");
+   $update_messages->execute([$name,$email, $message]);
+   
+   echo "<script>
+   Swal.fire({
+    icon: 'success',
+    title: 'Success...',
+    text: 'Bạn đã gửi lời nhắn thành công!',
+  })
+ </script>";
+   header("location:lien-lac");
+
+}
+}
+
+?>
+
+
 <script src="kimngoc/assets/js/main.js"></script>
 
 <!-- ====== ionicons ======= -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-
-
-
-
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<script src="vendor/bootstrap/js/popper.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="vendor/select2/select2.min.js"></script>
-<script src="vendor/tilt/tilt.jquery.min.js"></script>
-<script>
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-
-<script src="js/main.js"></script>
 
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7dd4294b0f259fa1","version":"2023.4.0","b":1,"token":"cd0b4b3a733644fc843ef0b185f98241","si":100}' crossorigin="anonymous"></script>
