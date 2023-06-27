@@ -23,7 +23,7 @@ RewriteRule ^update-chamngon$ admin-update-chamngon.php [L]
 RewriteRule ^update-congviec$ admin-update-congviec.php [L]
 RewriteRule ^update-dongthoigian$ admin-update-dongthoigian.php [L]
 RewriteRule ^update-mid$ admin-update-mid.php [L]
-RewriteRule ^admin-update-sanpham$ admin-update-sanpham.php [L]
+RewriteRule ^update-sanpham$ admin-update-sanpham.php [L]
 RewriteRule ^update-slider$ admin-update-slider.php [L]
 RewriteRule ^dangnhap$ index.php [L]
 
