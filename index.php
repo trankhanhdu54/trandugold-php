@@ -6,7 +6,7 @@
 
 
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -181,7 +181,9 @@
             
         </div>
     </div>
-</nav> <section id="TabBar" class="display_none background_white z_index_9xx shadow_2 position_fixed width_x100 bottom_0 noselect"
+</nav> 
+
+<section id="TabBar" class="display_none background_white z_index_9xx shadow_2 position_fixed width_x100 bottom_0 noselect"
     medium-screen="display_block">
     <div class="container">
         <ul class="row margin_bottom_0 padding_0" style="height: 58px;">
@@ -205,7 +207,7 @@
 
             <li class="column display_flex items_center content_center text_center padding_0 border_bottom_2 
             border_white ">
-                <a href="dich-vu" class="display_block padding_y_1">
+                <a href="gioi-thieu" class="display_block padding_y_1">
 
 
                     <div
