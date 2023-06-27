@@ -109,8 +109,8 @@ if(isset($_GET['delete'])){
    <img src="../mid_img/<?= $fetch_mid['image']; ?>" alt="">
    <div class="name">Câu nói: <h3><?= $fetch_mid['name']; ?></h3></div>
    <div class="flex-btn">
-      <a href="update-mid?update=<?= $fetch_mid['id']; ?>" class="option-btn">Sửa</a>
-      <a href="mid?delete=<?= $fetch_mid['id']; ?>" class="delete-btn" onclick="return confirm('Xóa tiêu đề?');">Xóa</a>
+      <a href="update-chamngon?update=<?= $fetch_mid['id']; ?>" class="option-btn">Sửa</a>
+      <a href="chamngon?delete=<?= $fetch_mid['id']; ?>" class="delete-btn" onclick="return confirm('Xóa tiêu đề?');">Xóa</a>
    </div>
 </div>
 <?php
