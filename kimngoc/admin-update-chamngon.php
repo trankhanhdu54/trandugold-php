@@ -25,7 +25,7 @@ if(isset($_POST['update'])){
    $update_category = $conn->prepare("UPDATE `chamngon` SET id = ?, text = ?, name = ? WHERE id = ?");
    $update_category->execute([$xid, $name,$text, $id]);
 
-   $message[] = 'Tiêu đề được cập nhật!';
+   $message[] = 'Châm ngôn được cập nhật!';
    header('location:chamngon');
 
    $old_image = $_POST['old_image'];
@@ -84,7 +84,7 @@ if(isset($_POST['update'])){
 
             <section class="update-product">
 
-   <h1 class="heading">Cập nhật loại</h1>
+   <h1 class="heading">Cập nhật Câu nói</h1>
 
    <?php
       $update_id = $_GET['update'];
@@ -98,7 +98,7 @@ if(isset($_POST['update'])){
       <input type="hidden" name="old_image" value="<?= $fetch_mid['image']; ?>">
       <span>Thứ tự hiển thị</span>
       <input type="number" required placeholder="ví dụ 1-2-3-4" name="xid" class="box" value="<?= $fetch_mid['id']; ?>">
-      <span>update Tiêu đề</span>
+      <span>update Câu Nói</span>
       <input type="text" required placeholder="..." name="name" class="box" value="<?= $fetch_mid['name']; ?>">
       <span>Text</span>
       <input type="text" required placeholder="..." name="text" class="box" value="<?= $fetch_mid['text']; ?>">
