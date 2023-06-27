@@ -1,5 +1,5 @@
     <!DOCTYPE html>
-    <html lang="vi">
+    <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +8,13 @@
     <meta name="description" content="Gold là một cặp nhân cách trong một tâm hồn. Một tâm hồn cho khoa học, một tâm hồn cho nghệ thuật.">
     <meta property="og:type" content="profile">
     <meta property="og:title" content="Tôi là Gold | Trần Khánh Dư.">
-    <meta property="og:url" content="dich-vu">
+    <meta property="og:url" content="gioi-thieu">
     <meta property="og:image" content="img/image/image/about.jpg">
     <meta property="og:site_name" content="Trần Khánh Dư">
     <meta property="og:description" content="Gold là một cặp nhân cách trong một tâm hồn. Một tâm hồn cho khoa học, một tâm hồn cho nghệ thuật.">
     <meta name="robots" content="index,follow">
-    <link type="image/png" rel="icon" href="../img/logo-gold.png">
-    <link rel="canonical" href="dich-vu">
+    <link type="image/png" rel="icon" href="img/logo-gold.png">
+    <link rel="canonical" href="gioi-thieu">
     
     <link type="text/css" rel="stylesheet" href="assets/css/gold/reset/v.1.0.0.min.css">
     <link type="text/css" rel="stylesheet" href="assets/css/gold/base/v.1.0.0.min.css">
@@ -206,7 +206,7 @@
 
             <li class="column display_flex items_center content_center text_center padding_0 border_bottom_2 
              border_brand ">
-                <a href="dich-vu" class="display_block padding_y_1">
+                <a href="gioi-thieu" class="display_block padding_y_1">
 
 
                     <div
@@ -397,7 +397,6 @@ Tuy nhiên, khi tức giận, hãy tránh xa không gian có màu vàng nếu kh
 
         </main>
 
-    
 
     <?php include 'footer.php'; ?>
 </footer>
