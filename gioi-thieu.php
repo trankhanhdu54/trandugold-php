@@ -287,7 +287,7 @@
                         <div class="text_bolder text_4 text_right margin_bottom_1" medium-screen="display_inline_block">Chia sẻ :</div>
                         <div medium-screen="display_inline_block">
 
-                            <a class="margin_left_2 square_2 display_inline_block text_black" hover-select="text_primary" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftrandugold.com%2F&amp;src=sdkpreparse" target="_blank">
+                            <a class="margin_left_2 square_2 display_inline_block text_black" hover-select="text_primary" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftrandugold.cleverapps.io%2F&amp%3Bsrc=sdkpreparse" target="_blank">
                                 <svg fill="currentColor" 
 		viewBox="0 0 448 512">
 		<path fill="currentColor"
