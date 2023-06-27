@@ -82,7 +82,7 @@ if(isset($_GET['delete'])){
             <section class="add-products">
 
 <form action="" method="POST" enctype="multipart/form-data">
-   <h3>Thêm câu nói giới thiệu dsầu web</h3>
+   <h3>Thêm câu nói giới thiệu đầu web</h3>
    <input type="text" required placeholder="i'm ..." name="name" class="box">
    <h4>Lưu ý: Hình ảnh thêm vào phải là ảnh nền trắng dưới định dạng .png </h4>
    <input type="file" name="image" class="box" accept="image/png" required>
