@@ -18,12 +18,10 @@ if(isset($_POST['update'])){
    $xid = filter_var($xid, FILTER_SANITIZE_STRING);
    $name = $_POST['name'];
    $name = filter_var($name, FILTER_SANITIZE_STRING);
-   $text = $_POST['text'];
-   $text = filter_var($text, FILTER_SANITIZE_STRING);
 
 
-   $update_category = $conn->prepare("UPDATE `chamngon` SET id = ?, text = ?, name = ? WHERE id = ?");
-   $update_category->execute([$xid, $name,$text, $id]);
+   $update_category = $conn->prepare("UPDATE `chamngon` SET id = ?, name = ? WHERE id = ?");
+   $update_category->execute([$xid, $name, $id]);
 
    $message[] = 'Châm ngôn được cập nhật!';
    header('location:chamngon');
@@ -100,8 +98,6 @@ if(isset($_POST['update'])){
       <input type="number" required placeholder="ví dụ 1-2-3-4" name="xid" class="box" value="<?= $fetch_mid['id']; ?>">
       <span>update Câu Nói</span>
       <input type="text" required placeholder="..." name="name" class="box" value="<?= $fetch_mid['name']; ?>">
-      <span>Text</span>
-      <input type="text" required placeholder="..." name="text" class="box" value="<?= $fetch_mid['text']; ?>">
       
       <span>Cập nhật hình ảnh</span>
       <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
