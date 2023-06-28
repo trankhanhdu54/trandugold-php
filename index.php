@@ -462,7 +462,7 @@
                 <div class="column padding_x_8 text_white padding_y_5" medium-screen="padding_x_6"
                     small-screen="padding_x_5">
 
-                    <p class=" text_1x text_bolder" medium-screen="text_8" style="line-height: 124%;"><?= $fetch_chamngon['name']; ?></p>
+                    <p class=" text_1x text_bolder" medium-screen="text_8" style="line-height: 124%;">" <?= $fetch_chamngon['name']; ?> "</p>
                     <p class="margin_bottom_1 text_6 text_bolder">Trần Khánh Dư</p>
                     <p class="text_5">Dev & Marketing, <a href="https://www.facebook.com/TranDuGold/" target="_brank" rel="noopener"
                             class="text_brand text_bolder">Gold Designer</a></p>
