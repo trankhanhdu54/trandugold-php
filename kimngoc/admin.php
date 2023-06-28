@@ -2,6 +2,7 @@
 
 include '../components/connect.php';
 
+ob_start();
 session_start();
 
 $admin_id = $_SESSION['admin_id'];
