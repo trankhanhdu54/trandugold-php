@@ -2,7 +2,12 @@
 
 include '../components/connect.php';
 
+ob_start();
 session_start();
+
+if(!isset($admin_id)){
+   header('location:admin.php');
+};
 
 if(isset($_POST['submit'])){
 
